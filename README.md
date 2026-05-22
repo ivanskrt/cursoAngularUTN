@@ -1,59 +1,26 @@
 # CursoAngular
+# Mi primera app en Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+## ## Estructura de Archivos Principales
+* **`src/app/`**: Es la carpeta principal donde reside el código de la aplicación (componentes, servicios, rutas, etc.).
+* **`app.component.ts`**: Es el componente principal (raíz) que contiene la lógica en TypeScript de la vista inicial.
+* **`assets/`**: Carpeta destinada a alojar recursos estáticos como imágenes o fuentes.
 
-## Development server
+> **Aclaración importante sobre la versión de Angular:**
+> Este proyecto fue generado utilizando una versión reciente de Angular (v17+), la cual utiliza **Standalone Components** de manera predeterminada. Por este motivo, la estructura clásica mencionada en la bibliografía ha cambiado ligeramente:
+> * El archivo **`app.module.ts`** ya no se genera. Su responsabilidad de configuración global ahora recae en **`app.config.ts`**, y las importaciones se hacen directamente en cada componente.
+> * La carpeta **`environments/`** ya no viene por defecto para mantener el proyecto base más limpio, pero se puede generar manualmente si el entorno lo requiere.
 
-To start a local development server, run:
+## Instrucciones para ejecutar el proyecto
 
-```bash
-ng serve
-```
+Sigue estos pasos para clonar el repositorio y levantar el entorno local:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. **Clonar el repositorio:**
+   Abre tu terminal y ejecuta el siguiente comando:
+   ```bash
+   git clone 
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Creditos del autor
+> * Nombre: Ivan Skrt
+> * Curso: Desarrollo con Angular
+> * Unidad: Modulo 1 - Unidad 1

@@ -4,10 +4,12 @@
 ## Estructura de Archivos Principales
 
 * **`src/app/`**: Es la carpeta principal del proyecto. Contiene el código fuente de la aplicación, incluyendo los componentes, servicios y rutas.
-* **`app.component.ts`**: Es el componente principal (raíz) de la aplicación. Contiene la lógica en TypeScript que controla la vista principal.
+* * **`app.component.ts` (en este proyecto `app.ts`)**: Es el componente principal (raíz) de la aplicación. Contiene la lógica en TypeScript que controla la vista principal. Aunque en esta versión generada por el CLI el nombre se abrevia como `app.ts`, su propósito y función dentro de la arquitectura son idénticos.
 * **`app.module.ts`**: En aplicaciones Angular tradicionales, es el archivo de configuración principal. Su función es agrupar componentes, directivas y servicios (usando `@NgModule`) para que Angular sepa cómo organizar la aplicación. *(Nota: Al utilizar una versión reciente de Angular con Standalone Components, este archivo no se genera; su función la asume `app.config.ts` y las importaciones individuales).*
 * `assets/`**: Es la carpeta destinada a alojar recursos estáticos que no requieren compilación, como imágenes, íconos o fuentes.
 * `environments/`**: Carpeta que contiene archivos de configuración para definir variables dependientes del entorno (ej. desarrollo vs. producción). *(Nota: En las versiones más nuevas de Angular CLI, esta carpeta no se genera por defecto para mantener la estructura base más limpia).*
+
+![Captura de la app en funcionamiento](src/assets/imagenDePrueba.png)
 
 ## Instrucciones para ejecutar el proyecto
 ### Requisitos previos

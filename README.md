@@ -1,14 +1,17 @@
 # CursoAngular
 
+## Descipción breve
+Primera aplicación práctica del Curso de Angular, incluye modificaciones en el componente raíz para aplicar interpolación de datos, renderizado de imágenes locales y la configuración inicial del entorno.
 
 ## Estructura de Archivos Principales
 
 * **`src/app/`**: Es la carpeta principal del proyecto. Contiene el código fuente de la aplicación, incluyendo los componentes, servicios y rutas.
-* * **`app.component.ts` (en este proyecto `app.ts`)**: Es el componente principal (raíz) de la aplicación. Contiene la lógica en TypeScript que controla la vista principal. Aunque en esta versión generada por el CLI el nombre se abrevia como `app.ts`, su propósito y función dentro de la arquitectura son idénticos.
+* **`app.component.ts` (en este proyecto `app.ts`)**: Es el componente principal (raíz) de la aplicación. Contiene la lógica en TypeScript que controla la vista principal. Aunque en esta versión generada por el CLI el nombre se abrevia como `app.ts`, su propósito y función dentro de la arquitectura son idénticos.
 * **`app.module.ts`**: En aplicaciones Angular tradicionales, es el archivo de configuración principal. Su función es agrupar componentes, directivas y servicios (usando `@NgModule`) para que Angular sepa cómo organizar la aplicación. *(Nota: Al utilizar una versión reciente de Angular con Standalone Components, este archivo no se genera; su función la asume `app.config.ts` y las importaciones individuales).*
 * `assets/`**: Es la carpeta destinada a alojar recursos estáticos que no requieren compilación, como imágenes, íconos o fuentes.
 * `environments/`**: Carpeta que contiene archivos de configuración para definir variables dependientes del entorno (ej. desarrollo vs. producción). *(Nota: En las versiones más nuevas de Angular CLI, esta carpeta no se genera por defecto para mantener la estructura base más limpia).*
 
+## Captura de la app en funcionamiento
 ![Captura de la app en funcionamiento](src/assets/imagenDePrueba.png)
 
 ## Instrucciones para ejecutar el proyecto
@@ -35,7 +38,6 @@ Sigue estos pasos para clonar el repositorio y levantar el entorno local:
    Inicia el servidor de desarrollo local:
    ```bash
    ng serve
-
 
 ## Creditos del autor
 > * Nombre: Ivan Skrt

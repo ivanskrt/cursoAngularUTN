@@ -1,0 +1,18 @@
+<section class="productos">
+  <h2>Lista de productos</h2>
+  <button class="btn" type="button" (click)="agregarProducto()">Agregar producto</button>
+  <p class="vacia" *ngIf="productos.length === 0">No hay productos cargados.</p>
+  <ul>
+    <li *ngFor="let producto of productos">
+      <div class="fila">
+        <span class="nombre">{{ producto.nombre }}</span>
+        <button class="btn btn-eliminar" type="button" (click)="eliminarProducto(producto.id)">Eliminar</button>
+      </div>
+      <span class="detalle">Precio: {{ producto.precio | currency:'USD':'symbol' }} · Stock: {{ producto.stock }}</span>
+      <span class="detalle">Alta: {{ producto.fechaAlta | date:'mediumDate' }}</span>
+      <span class="detalle">
+        Precio con descuento: {{ producto.precio | descuento:producto.descuento | currency:'USD':'symbol' }}
+      </span>
+    </li>
+  </ul>
+</section>

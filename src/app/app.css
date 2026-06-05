@@ -17,14 +17,41 @@ h1 {
     text-align: center;
 }
 
-.contact-form {
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.panel {
+    flex: 1 1 420px;
     max-width: 520px;
-    margin: 0 auto;
+}
+
+.panel .productos {
+    max-width: none;
+    margin: 0;
+}
+
+.form-title {
+    max-width: none;
+    margin: 0 0 16px;
+    text-align: left;
+}
+
+.contact-card {
+    max-width: none;
     background: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.contact-form {
+    margin: 0;
 }
 
 .contact-form > div {

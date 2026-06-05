@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {ReactiveFormsModule, FormBuilder, Validators} from "@angular/forms";
+import { ListaProductos } from './components/lista-productos/lista-productos';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, ReactiveFormsModule],
+  imports: [CommonModule, RouterOutlet, ReactiveFormsModule, ListaProductos],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

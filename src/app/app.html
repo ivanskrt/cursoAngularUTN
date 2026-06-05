@@ -1,37 +1,46 @@
 
 <router-outlet />
 
-<h1>Formulario de contacto</h1>
-<form class="contact-form" [formGroup]="message_form" (ngSubmit)="submitForm()">
-  <div>
-    <label for="name">Nombre:</label>
-    <input 
-      type="text" 
-      id="name"  
-      formControlName="name"
-      [ngClass]="{
-        'invalid-input': message_form.get('name')?.invalid && message_form.get('name')?.touched
-      }" 
-    >
+<div class="layout">
+  <div class="panel">
+    <app-lista-productos />
+  </div>
+  <div class="panel">
+    <div class="contact-card">
+      <h1 class="form-title">Formulario de contacto</h1>
+      <form class="contact-form" [formGroup]="message_form" (ngSubmit)="submitForm()">
+      <div>
+        <label for="name">Nombre:</label>
+        <input 
+          type="text" 
+          id="name"  
+          formControlName="name"
+          [ngClass]="{
+            'invalid-input': message_form.get('name')?.invalid && message_form.get('name')?.touched
+          }" 
+        >
 
-    <span class="error" *ngIf="getMessageFormErrors('name')">{{ getMessageFormErrors('name') }}</span>
+        <span class="error" *ngIf="getMessageFormErrors('name')">{{ getMessageFormErrors('name') }}</span>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          formControlName="email"
+          [ngClass]="{
+            'invalid-input': message_form.get('email')?.invalid && message_form.get('email')?.touched
+          }"
+        >
+        <span class="error" *ngIf="getMessageFormErrors('email')">{{ getMessageFormErrors('email') }}</span>
+      </div>
+      <div>
+        <label for="message">Mensaje:</label>
+        <textarea id="message" formControlName="message"></textarea>
+        <span class="error" *ngIf="getMessageFormErrors('message')">{{ getMessageFormErrors('message') }}</span>
+      </div>
+        <button type="submit" [disabled]="message_form.invalid">Enviar</button>
+      </form>
+    </div>
   </div>
-  <div>
-    <label for="email">Email:</label>
-    <input 
-      type="email" 
-      id="email" 
-      formControlName="email"
-      [ngClass]="{
-        'invalid-input': message_form.get('email')?.invalid && message_form.get('email')?.touched
-      }"
-    >
-    <span class="error" *ngIf="getMessageFormErrors('email')">{{ getMessageFormErrors('email') }}</span>
-  </div>
-  <div>
-    <label for="message">Mensaje:</label>
-    <textarea id="message" formControlName="message"></textarea>
-    <span class="error" *ngIf="getMessageFormErrors('message')">{{ getMessageFormErrors('message') }}</span>
-  </div>
-  <button type="submit" [disabled]="message_form.invalid">Enviar</button>
-</form>
+</div>

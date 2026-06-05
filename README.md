@@ -11,8 +11,10 @@ Primera aplicación práctica del Curso de Angular, incluye modificaciones en el
 * `assets/`**: Es la carpeta destinada a alojar recursos estáticos que no requieren compilación, como imágenes, íconos o fuentes.
 * `environments/`**: Carpeta que contiene archivos de configuración para definir variables dependientes del entorno (ej. desarrollo vs. producción). *(Nota: En las versiones más nuevas de Angular CLI, esta carpeta no se genera por defecto para mantener la estructura base más limpia).*
 
-## Captura de la app en funcionamiento
-![Captura de la app en funcionamiento](src/assets/imagenDePrueba.png)
+## Capturas de pantalla
+![Lista vacia](src/assets/lista-vacia.png)
+![Pipes estandar y descuento](src/assets/pipes-funcionando.png)
+![Agregar y eliminar productos](src/assets/agregar-eliminar.png)
 
 ## Instrucciones para ejecutar el proyecto
 ### Requisitos previos

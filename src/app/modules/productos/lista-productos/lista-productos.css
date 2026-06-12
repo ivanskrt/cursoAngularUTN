@@ -46,8 +46,42 @@
 .productos .fila {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
+}
+
+.productos .controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.productos .controls .btn {
+  min-width: 120px;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.productos .btn-detalle {
+  background: #0f172a;
+  color: #ffffff;
+  border: 0;
+}
+
+.productos .btn-detalle:hover {
+  background: #0b1320;
+}
+
+.productos .btn-eliminar {
+  background: #ffffff;
+  border: 1px solid #dc2626;
+  color: #dc2626;
+}
+
+.productos .btn-eliminar:hover {
+  background: rgba(220,34,46,0.04);
 }
 
 .productos .nombre {

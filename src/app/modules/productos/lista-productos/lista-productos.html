@@ -6,13 +6,18 @@
     <li *ngFor="let producto of productos">
       <div class="fila">
         <span class="nombre">{{ producto.nombre }}</span>
-        <button class="btn btn-eliminar" type="button" (click)="eliminarProducto(producto.id)">Eliminar</button>
+        <div class="controls">
+          <button class="btn btn-eliminar" type="button" (click)="eliminarProducto(producto.id)">Eliminar</button>
+          <button class="btn btn-detalle" type="button" (click)="verDetalle(producto.id)">Ver detalle</button>
+        </div>
       </div>
+      <p class="descripcion" *ngIf="producto.descripcion">{{ producto.descripcion }}</p>
       <span class="detalle">Precio: {{ producto.precio | currency:'USD':'symbol' }} · Stock: {{ producto.stock }}</span>
       <span class="detalle">Alta: {{ producto.fechaAlta | date:'mediumDate' }}</span>
       <span class="detalle">
         Precio con descuento: {{ producto.precio | descuento:producto.descuento | currency:'USD':'symbol' }}
       </span>
+      
     </li>
   </ul>
 </section>

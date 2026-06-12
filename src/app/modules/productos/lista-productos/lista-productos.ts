@@ -1,12 +1,15 @@
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
-import { Productos, Producto } from '../../services/productos';
-import { DescuentoPipe } from '../../pipes/descuento.pipe';
+import { Productos, Producto } from '../../../services/producto/productos';
+import { DescuentoPipe } from '../../../pipes/descuento.pipe';
 
 @Component({
   selector: 'app-lista-productos',
-  imports: [CommonModule, CurrencyPipe, DatePipe, DescuentoPipe],
+  standalone: true,
+  imports: [CommonModule, CurrencyPipe, DatePipe, DescuentoPipe, RouterModule],
   templateUrl: './lista-productos.html',
   styleUrl: './lista-productos.css'
 })
@@ -14,6 +17,7 @@ export class ListaProductos implements OnInit {
   productos: Producto[] = [];
   private nuevoIndice = 1;
   private productosService = inject(Productos);
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.cargarProductos();
@@ -38,5 +42,9 @@ export class ListaProductos implements OnInit {
   eliminarProducto(id: number): void {
     this.productosService.deleteProducto(id);
     this.cargarProductos();
+  }
+
+  verDetalle(id: number): void {
+    this.router.navigate(['/productos', id]);
   }
 }

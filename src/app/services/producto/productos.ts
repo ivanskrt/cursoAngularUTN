@@ -17,6 +17,7 @@ export interface Producto {
   precio: number;
   stock: number;
   descuento: number;
+  descripcion?: string;
   fechaAlta: Date;
 }
 
@@ -32,6 +33,7 @@ export class Productos {
       precio: 12.5,
       stock: 40,
       descuento: 10,
+      descripcion: 'Café tostado y molido, ideal para espresso.',
       fechaAlta: new Date(2024, 10, 3),
     },
     {
@@ -40,7 +42,17 @@ export class Productos {
       precio: 9.9,
       stock: 60,
       descuento: 0,
+      descripcion: 'Hoja de té verde natural de cultivo orgánico.',
       fechaAlta: new Date(2025, 1, 20),
+    },
+    {
+      id: 3,
+      nombre: 'Chocolate oscuro',
+      precio: 6.5,
+      stock: 30,
+      descuento: 5,
+      descripcion: 'Chocolate 70% cacao, textura intensa.',
+      fechaAlta: new Date(2026, 0, 5),
     },
   ];
 
@@ -48,6 +60,10 @@ export class Productos {
   getProductos(): Producto[] {
     //Creo un nuevo array con los valores de mi lista de productos para romper la referencia
     return [...this.listaProductos];
+  }
+
+  getProductoById(id: number): Producto | null {
+    return this.listaProductos.find((p) => p.id === id) ?? null;
   }
 
   //Crea un id para el producto recibido y lo suma a la lista

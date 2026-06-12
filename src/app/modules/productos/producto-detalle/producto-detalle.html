@@ -1,0 +1,13 @@
+<section *ngIf="producto; else notFound" class="producto-detail">
+  <h2>{{ producto.nombre }}</h2>
+  <p *ngIf="producto.descripcion">{{ producto.descripcion }}</p>
+  <p>Precio: {{ producto.precio | currency:'USD':'symbol' }}</p>
+  <p>Stock: {{ producto.stock }}</p>
+  <p *ngIf="producto.descuento">Descuento: {{ producto.descuento }}%</p>
+  <p>Alta: {{ producto.fechaAlta | date:'mediumDate' }}</p>
+  <button (click)="volver()">Volver</button>
+</section>
+<ng-template #notFound>
+  <p>Producto no encontrado.</p>
+  <button (click)="volver()">Volver</button>
+</ng-template>

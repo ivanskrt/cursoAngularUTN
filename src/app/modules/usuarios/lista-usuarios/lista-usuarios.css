@@ -1,0 +1,11 @@
+.usuarios { 
+  background: #fff; 
+  padding: 20px; 
+  border-radius: 8px; 
+} 
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

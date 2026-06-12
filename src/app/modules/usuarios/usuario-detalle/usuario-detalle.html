@@ -1,0 +1,11 @@
+<section *ngIf="usuario; else notFound" class="usuario-detail">
+  <h2>{{ usuario.nombre }}</h2>
+  <p>Email: {{ usuario.email }}</p>
+  <p>Rol: {{ usuario.rol }}</p>
+  <p>Estado: <strong>{{ usuario.activo ? 'Activo' : 'Inactivo' }}</strong></p>
+  <button (click)="volver()">Volver</button>
+</section>
+<ng-template #notFound>
+  <p>Usuario no encontrado.</p>
+  <button (click)="volver()">Volver</button>
+</ng-template>

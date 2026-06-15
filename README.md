@@ -1,20 +1,26 @@
 # CursoAngular
 
 ## Descipción breve
-Primera aplicación práctica del Curso de Angular, incluye modificaciones en el componente raíz para aplicar interpolación de datos, renderizado de imágenes locales y la configuración inicial del entorno.
+Aplicación de gestión de estado de productos y usuarios en Angular. El proyecto implementa una arquitectura separada en 3 módulos principales (Inicio, Productos y Usuarios) utilizando Lazy Loading, enrutamiento dinámico, formularios reactivos con validaciones, servicios para la gestión de datos, pipes personalizados y persistencia de navegación mediante localStorage.
 
 ## Estructura de Archivos Principales
 
-* **`src/app/`**: Es la carpeta principal del proyecto. Contiene el código fuente de la aplicación, incluyendo los componentes, servicios y rutas.
-* **`app.component.ts` (en este proyecto `app.ts`)**: Es el componente principal (raíz) de la aplicación. Contiene la lógica en TypeScript que controla la vista principal. Aunque en esta versión generada por el CLI el nombre se abrevia como `app.ts`, su propósito y función dentro de la arquitectura son idénticos.
-* **`app.module.ts`**: En aplicaciones Angular tradicionales, es el archivo de configuración principal. Su función es agrupar componentes, directivas y servicios (usando `@NgModule`) para que Angular sepa cómo organizar la aplicación. *(Nota: Al utilizar una versión reciente de Angular con Standalone Components, este archivo no se genera; su función la asume `app.config.ts` y las importaciones individuales).*
-* `assets/`**: Es la carpeta destinada a alojar recursos estáticos que no requieren compilación, como imágenes, íconos o fuentes.
-* `environments/`**: Carpeta que contiene archivos de configuración para definir variables dependientes del entorno (ej. desarrollo vs. producción). *(Nota: En las versiones más nuevas de Angular CLI, esta carpeta no se genera por defecto para mantener la estructura base más limpia).*
+* **`src/app/`**: Es la carpeta principal del proyecto. Contiene el código fuente de la aplicación, incluyendo los módulos,componentes, servicios y rutas.
+* **`src/app/modules/`**: Contiene los módulos de funcionalidad de la aplicación (productos y usuarios). Cada submódulo encapsula sus propios componentes (listas, vistas de detalle, formularios) y sus archivos de rutas (*routing-module.ts*) para implementar el Lazy Loading.
+* **`src/app/components/`: Aloja componentes independientes o compartidos, como el módulo de inicio.
+* **`src/app/services/`: Contiene los servicios inyectables encargados de centralizar la lógica de negocio y la gestión de datos (simulación de ABM) tanto para productos como para usuarios.
+* **`src/app/pipes/`: Directorio destinado a las tuberías personalizadas como el cálculo de descuentos.
+* **`app.routes.ts`: Archivo de configuración del enrutamiento principal, donde se definen las rutas base y se orquesta la carga perezosa de los módulos secundarios.
+* **`app.ts`: Componente principal de la aplicación. Maneja el diseño estructural, el contenedor dinámico de rutas (router-outlet) y la lógica de interceptación para recordar el último módulo visitado mediante localStorage.
+* **`app.config.ts`: Archivo de configuración global que reemplaza al tradicional app.module.ts en las versiones modernas de Angular (Standalone Components), encargado de proveer las rutas y herramientas a nivel de toda la aplicación.
 
 ## Capturas de pantalla
-![Lista vacia](src/assets/lista-vacia.png)
-![Pipes estandar y descuento](src/assets/pipes-funcionando.png)
-![Agregar y eliminar productos](src/assets/agregar-eliminar.png)
+![Lista usuarios](src/assets/lista-usuarios.png)
+![Lista productos](src/assets/lista-productos.png)
+
+## Despliegue en Producción
+La aplicación se encuentra desplegada y funcionando en Vercel. Puedes acceder a ella mediante el siguiente enlace:
+**[https://curso-angular-utn-ivanskrt.vercel.app/]**
 
 ## Instrucciones para ejecutar el proyecto
 ### Requisitos previos
@@ -44,7 +50,7 @@ Sigue estos pasos para clonar el repositorio y levantar el entorno local:
 ## Creditos del autor
 > * Nombre: Ivan Skrt
 > * Curso: Desarrollo con Angular
-> * Unidad: Modulo 1 - Unidad 1
+> * Unidad: Entrega Final
 
 ## Bibliografía y Fuentes
 > * Angular. (s.f.-b). The Angular CLI. https://angular.dev/tools/cli

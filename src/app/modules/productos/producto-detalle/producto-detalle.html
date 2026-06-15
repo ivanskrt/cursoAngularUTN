@@ -1,13 +1,48 @@
-<section *ngIf="producto; else notFound" class="producto-detail">
-  <h2>{{ producto.nombre }}</h2>
-  <p *ngIf="producto.descripcion">{{ producto.descripcion }}</p>
-  <p>Precio: {{ producto.precio | currency:'USD':'symbol' }}</p>
-  <p>Stock: {{ producto.stock }}</p>
-  <p *ngIf="producto.descuento">Descuento: {{ producto.descuento }}%</p>
-  <p>Alta: {{ producto.fechaAlta | date:'mediumDate' }}</p>
-  <button (click)="volver()">Volver</button>
+<section *ngIf="producto; else notFound" class="detalle-card">
+  <div class="detalle-header">
+    <h2 class="titulo">{{ producto.nombre }}</h2>
+    <span class="badge-descuento" *ngIf="producto.descuento">
+      -{{ producto.descuento }}% OFF
+    </span>
+  </div>
+
+  <p class="descripcion" *ngIf="producto.descripcion">{{ producto.descripcion }}</p>
+
+  <div class="info-grid">
+    
+    <div class="info-item">
+      <span class="label">Stock disponible</span>
+      <span class="value">{{ producto.stock }} unidades</span>
+    </div>
+    
+    <div class="info-item">
+      <span class="label">Fecha de alta</span>
+      <span class="value">{{ producto.fechaAlta | date:'mediumDate' }}</span>
+    </div>
+
+    <div class="info-item">
+      <span class="label">Precio</span>
+      <span class="value">{{ producto.precio | currency:'USD':'symbol' }}</span>
+    </div>
+
+    <div class="info-item" *ngIf="producto.descuento">
+      <span class="label">Precio con descuento</span>
+      <span class="value">
+        {{ producto.precio | descuento:producto.descuento | currency:'USD':'symbol' }}
+      </span>
+    </div>
+    
+  </div>
+
+  <div class="acciones">
+    <button class="btn-volver" (click)="volver()">Volver a la lista</button>
+  </div>
 </section>
+
 <ng-template #notFound>
-  <p>Producto no encontrado.</p>
-  <button (click)="volver()">Volver</button>
+  <section class="detalle-card error-card">
+    <h2 class="titulo-error">Producto no encontrado</h2>
+    <p class="descripcion">El producto que intentas buscar no existe o fue eliminado.</p>
+    <button class="btn-volver" (click)="volver()">Volver a la lista</button>
+  </section>
 </ng-template>

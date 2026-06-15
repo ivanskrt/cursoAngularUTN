@@ -1,17 +1,21 @@
 <section class="usuarios">
   <h2>Lista de usuarios</h2>
-  <a routerLink="/usuarios/crear" class="btn">Crear usuario</a>
+  <a routerLink="/usuarios/crear" class="btn-crear">Crear usuario</a>
   <ul>
     <li *ngFor="let user of usuarios">
       <div class="fila">
-        <div>
+        <div class="info">
           <div class="nombre">{{ user.nombre }}</div>
-          <div class="meta">{{ user.email }} · {{ user.rol }} · <strong>{{ user.activo ? 'Activo' : 'Inactivo' }}</strong></div>
+          <div class="dato">Email: {{ user.email }}</div>
+          <div class="dato">Rol: {{ user.rol }}</div>
+          <div class="dato">Estado: {{ user.activo ? 'Activo' : 'Inactivo' }}</div>
         </div>
         <div class="acciones">
-          <a [routerLink]="['/usuarios', user.id]">Ver detalle</a>
-          <button (click)="eliminar(user.id)">Eliminar</button>
-          <button (click)="toggleEstado(user.id)">{{ user.activo ? 'Desactivar' : 'Activar' }}</button>
+          <a [routerLink]="['/usuarios', user.id]" class="btn">Detalle</a>
+          <button (click)="toggleEstado(user.id)" class="btn-estado">
+            {{ user.activo ? 'Desactivar' : 'Activar' }}
+          </button>
+          <button (click)="eliminar(user.id)" class="btn-eliminar">Eliminar</button>
         </div>
       </div>
     </li>

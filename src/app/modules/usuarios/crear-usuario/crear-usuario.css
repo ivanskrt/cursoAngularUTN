@@ -1,0 +1,126 @@
+/* Contenedor principal del formulario */
+.form-container {
+  background-color: #ffffff;
+  border: 1px solid #e4e4e7; /* Gris claro */
+  border-radius: 12px;       /* Bordes muy redondeados */
+  padding: 34px;
+  max-width: 400px;          /* Ancho máximo para que no se estire de más */
+  margin: 0 0 0 200px;         /* Centrado en la pantalla */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+/* Título de la sección */
+.form-title {
+  color: #18181b;            /* Negro tipográfico */
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e4e4e7;
+}
+
+/* Estructura del formulario */
+.usuario-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;                 /* Separación uniforme entre campos */
+}
+
+/* Bloques de Label + Input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Etiquetas de texto */
+.form-label {
+  color: #27272a;            /* Gris oscuro */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Campos de entrada de texto */
+.form-input {
+  background-color: #f4f4f5; /* Fondo gris claro */
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;        /* Bordes redondeados */
+  padding: 10px 14px;
+  font-size: 16px;
+  color: #18181b;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Efecto cuando el usuario hace clic para escribir */
+.form-input:focus {
+  background-color: #ffffff; /* Pasa a fondo blanco */
+  border-color: #18181b;     /* Borde negro */
+}
+
+/* Contenedor especial para el Checkbox */
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+/* El cuadradito del checkbox */
+.form-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #18181b;     /* Color negro cuando está seleccionado */
+  cursor: pointer;
+}
+
+.form-label-checkbox {
+  color: #27272a;
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Botón de envío (Submit) */
+.btn-submit {
+  background-color: #18181b; /* Fondo negro */
+  color: #ffffff;            /* Texto blanco */
+  border: none;
+  border-radius: 8px;        /* Bordes redondeados */
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 8px;
+}
+
+/* Efecto hover cuando el botón está activo */
+.btn-submit:hover:not(:disabled) {
+  background-color: #27272a; /* Negro un poco más claro al pasar el mouse */
+}
+
+/* Estado deshabilitado si el formulario es inválido (Angular lo maneja solo) */
+.btn-submit:disabled {
+  background-color: #e4e4e7; /* Fondo gris apagado */
+  color: #a1a1aa;            /* Texto gris claro */
+  cursor: not-allowed;       /* Cambia el cursor por el de bloqueo */
+}
+
+.error-text {
+  color: #ef4444; /* Rojo estándar de alertas */
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.form-select{
+  background-color: #f4f4f5;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 16px;
+  color: #18181b;
+  outline: none;
+  transition: all 0.2s ease;
+}

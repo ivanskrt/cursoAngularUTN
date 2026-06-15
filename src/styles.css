@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  /* Inter como principal, con un fallback de seguridad muy sólido */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #fafafa; /* Un gris casi blanco */
+  color: #18181b;            /* El gris oscuro que usamos para el formulario */
+  margin: 0;                 /* Reseteamos márgenes por defecto del navegador */
+  padding: 0;
+}

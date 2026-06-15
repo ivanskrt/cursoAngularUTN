@@ -1,11 +1,32 @@
-<section *ngIf="usuario; else notFound" class="usuario-detail">
-  <h2>{{ usuario.nombre }}</h2>
-  <p>Email: {{ usuario.email }}</p>
-  <p>Rol: {{ usuario.rol }}</p>
-  <p>Estado: <strong>{{ usuario.activo ? 'Activo' : 'Inactivo' }}</strong></p>
-  <button (click)="volver()">Volver</button>
+<section *ngIf="usuario; else notFound" class="detalle-card">
+  <div class="detalle-header">
+    <h2 class="titulo">{{ usuario.nombre }}</h2>
+    <span class="badge-estado" [ngClass]="{'badge-activo': usuario.activo, 'badge-inactivo': !usuario.activo}">
+      {{ usuario.activo ? 'Activo' : 'Inactivo' }}
+    </span>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-item">
+      <span class="label">Email</span>
+      <span class="value">{{ usuario.email }}</span>
+    </div>
+    
+    <div class="info-item">
+      <span class="label">Rol en el sistema</span>
+      <span class="value">{{ usuario.rol }}</span>
+    </div>
+  </div>
+
+  <div class="acciones">
+    <button class="btn-volver" (click)="volver()">Volver a la lista</button>
+  </div>
 </section>
+
 <ng-template #notFound>
-  <p>Usuario no encontrado.</p>
-  <button (click)="volver()">Volver</button>
+  <section class="detalle-card error-card">
+    <h2 class="titulo-error">Usuario no encontrado</h2>
+    <p class="descripcion">El usuario que intentas buscar no existe o fue eliminado.</p>
+    <button class="btn-volver" (click)="volver()">Volver a la lista</button>
+  </section>
 </ng-template>

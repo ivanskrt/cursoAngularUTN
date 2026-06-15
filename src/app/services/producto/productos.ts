@@ -66,8 +66,8 @@ export class Productos {
     return this.listaProductos.find((p) => p.id === id) ?? null;
   }
 
-  //Crea un id para el producto recibido y lo suma a la lista
-  //El omit sirve para definir que producto sea de tipo producto pero no necesariamente debe tener la propiedad id, debido a que esta se generara en el metodo
+  
+  /* comentado ya que en entrega final no se pide poder crear productos 
   addProducto(producto_raw: Omit<Producto, 'id'>): Producto {
     //Si hay productos cargados, vamos a buscar el id de maximo valor entre la lista de productos, sino agregamos un 1
     const new_producto_id =
@@ -81,6 +81,7 @@ export class Productos {
     this.listaProductos.push(new_producto);
     return new_producto;
   }
+  */
 
   /* Elimina un producto de lista por id y con un boolean nos indica si la operacion se hizo o no */
   deleteProducto(id: number): boolean {

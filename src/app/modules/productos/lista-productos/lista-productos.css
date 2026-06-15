@@ -1,99 +1,121 @@
+/* Contenedor principal idéntico a usuarios (sin max-width) */
 .productos {
-  max-width: 520px;
-  margin: 0;
-  padding: 16px;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-}
-
-.productos .btn {
-  margin: 8px 0 12px;
-  padding: 10px 16px;
-  border: 0;
+  background: #fff;
+  padding: 20px;
   border-radius: 8px;
-  background: #0f172a;
-  color: #ffffff;
-  font-weight: 600;
+}
+
+/* El botón verde principal */
+.btn-crear {
+  display: inline-block;
+  background: #10b981;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
   cursor: pointer;
-  transition: transform 0.06s ease, opacity 0.2s ease;
+  margin-bottom: 30px;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.productos .btn:active {
-  transform: translateY(1px);
+.btn-crear:hover {
+  background: #059669;
 }
 
-.productos .btn-eliminar {
-  background: #ffffff;
-  border: 1px solid #dc2626;
-  color: #dc2626;
-}
-
+/* Limpieza de la lista y divisores */
 .productos ul {
   list-style: none;
   padding: 0;
-  margin: 12px 0 0;
+  margin: 0;
 }
 
 .productos li {
-  display: flex;
-  flex-direction: column;
-  padding: 8px 0;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 
-.productos .fila {
+.productos li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Alineación de la fila */
+.fila {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center; 
 }
 
-.productos .controls {
+/* Textos de información */
+.info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  align-items: flex-end;
+  gap: 4px;
 }
 
-.productos .controls .btn {
-  min-width: 120px;
-  padding: 8px 14px;
-  font-size: 14px;
-  border-radius: 8px;
-}
-
-.productos .btn-detalle {
-  background: #0f172a;
-  color: #ffffff;
-  border: 0;
-}
-
-.productos .btn-detalle:hover {
-  background: #0b1320;
-}
-
-.productos .btn-eliminar {
-  background: #ffffff;
-  border: 1px solid #dc2626;
-  color: #dc2626;
-}
-
-.productos .btn-eliminar:hover {
-  background: rgba(220,34,46,0.04);
-}
-
-.productos .nombre {
+.nombre {
   font-weight: 600;
+  font-size: 16px;
+  color: #18181b;
 }
 
-.productos .detalle {
+.descripcion {
   color: #4a4a4a;
-  font-size: 0.9rem;
+  font-size: 14px;
+  margin: 0; 
 }
 
-.productos .vacia {
+.detalle {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Contenedor de acciones a la derecha */
+.acciones {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Truco de flex-shrink para botones del mismo tamaño */
+.acciones .btn-detalle, 
+.acciones .btn-eliminar {
+  width: 120px;
+  font-size: 14px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-detalle {
+  background: #e5e7eb;
+  color: black;
+}
+
+.btn-detalle:hover {
+  background: #d1d5db;
+}
+
+.btn-eliminar {
+  background: #dc2626;
+  color: #fff;
+}
+
+.btn-eliminar:hover {
+  background: #b91c1c;
+}
+
+.vacia {
   color: #666666;
-  margin: 8px 0 0;
+  margin-top: 0;
 }

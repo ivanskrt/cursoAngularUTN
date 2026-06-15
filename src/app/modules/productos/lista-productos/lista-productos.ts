@@ -2,7 +2,6 @@ import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
-
 import { Productos, Producto } from '../../../services/producto/productos';
 import { DescuentoPipe } from '../../../pipes/descuento.pipe';
 
@@ -27,6 +26,7 @@ export class ListaProductos implements OnInit {
     this.productos = this.productosService.getProductos();
   }
 
+  /* comentado ya que en entrega final no se pide poder crear productos
   agregarProducto(): void {
     const indice = this.nuevoIndice++;
     this.productosService.addProducto({
@@ -38,7 +38,8 @@ export class ListaProductos implements OnInit {
     });
     this.cargarProductos();
   }
-
+  */
+ 
   eliminarProducto(id: number): void {
     this.productosService.deleteProducto(id);
     this.cargarProductos();

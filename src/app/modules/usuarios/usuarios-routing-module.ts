@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'crear',
-    loadComponent: () => import('./usuario-form').then((m) => m.UsuarioForm),
+    loadComponent: () => import('./crear-usuario/crear-usuario').then((m) => m.CrearUsuario),
   },
   {
     path: ':id',

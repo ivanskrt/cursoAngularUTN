@@ -1,0 +1,37 @@
+<section class="form-container">
+  <h2 class="form-title">Crear usuario</h2>
+  
+  <form [formGroup]="form" (ngSubmit)="submit()" class="usuario-form">
+    
+    <div class="form-group">
+      <label class="form-label">Nombre</label>
+      <input formControlName="nombre" class="form-input" placeholder="Ej. Juan Pérez" />
+      <small class="error-text">{{ getFormError('nombre') }}</small>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Email</label>
+      <input type="email" formControlName="email" class="form-input" placeholder="correo@ejemplo.com" />
+      <small class="error-text">{{ getFormError('email') }}</small>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Rol</label>
+      <select class="form-select">
+        <option value="admin">admin</option>
+        <option value="editor">editor</option>
+        <option value="viewer">viewer</option>
+      </select>
+    </div>
+
+    <div class="form-group-checkbox">
+      <input type="checkbox" id="activo" formControlName="activo" class="form-checkbox" />
+      <label for="activo" class="form-label-checkbox">Usuario activo</label>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid" class="btn-submit">
+      Crear usuario
+    </button>
+
+  </form>
+</section>
